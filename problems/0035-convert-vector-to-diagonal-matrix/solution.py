@@ -2,13 +2,6 @@ import numpy as np
 
 def make_diagonal(x):
 	# Your code here
-	n = len(x)
-	matrix = [[0] * n for i in range(n)]
-
-	for i in range(n):
-		for j in range(n):
-			if i == j:
-				matrix[i][j] = x[i]
-
-	return matrix
+	return [[x[i] if i == j else 0 for i in range(len(x))]
+		for j in range(len(x))]
 	pass
