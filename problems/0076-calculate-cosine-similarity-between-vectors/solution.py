@@ -10,18 +10,18 @@ def cosine_similarity(v1, v2):
 		The cosine_similarity of the two vectors.
 	"""
 
-#분모
-	M = 0
-	# Implement your code here
-	mother = list(zip(v1, v2))
-	for i in range(len(mother)):
-		n = mother[i][0] * mother[i][1]
-		M += n
-
 #분자
+	S = 0
+	#Implement your code here
+	son = list(zip(v1, v2))
+	for i in range(len(son)):
+		s = son[i][0] * son[i][1]
+		S += s
+
+#분모
 	a = sum(i ** 2 for i in v1) ** 0.5
 	b = sum(j ** 2 for j in v2) ** 0.5
-	s = a*b
+	M = a*b
 
-	return M/s 
+	return S/M
 	pass 
