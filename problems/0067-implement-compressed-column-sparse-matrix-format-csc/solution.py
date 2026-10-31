@@ -8,18 +8,20 @@ def compressed_col_sparse_matrix(dense_matrix):
 	m = zip(*dense_matrix)
 	vals = []
 	row_inx = []
-	col_ptr =[0]
+	col_ptr =[]
 	c = 0
 
 	for i in m:
 		r = 0
+		col_ptr.append(c)
 		for j in i:
 			if j != 0:
 				vals.append(j)
 				row_inx.append(r)
 				c+= 1
 			r += 1
-		col_ptr.append(c) 
+
+	col_ptr.append(c) 
 
 	return vals, row_inx, col_ptr
 	pass
